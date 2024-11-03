@@ -7,8 +7,8 @@ This is a programming language that allows you to write datapacks for Minecraft 
 - [x] Print (Tellraw)
 - [ ] Particles
 - [ ] Scoreboard
-- [ ] Fill
-- [ ] SetBlock
+- [x] Fill
+- [x] SetBlock
 - [ ] Execute
 - [ ] Loops
 - [ ] Experience
