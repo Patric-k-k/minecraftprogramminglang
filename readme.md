@@ -4,8 +4,8 @@
 ## What is this?
 This is a programming language that allows you to write datapacks for Minecraft with a better syntax and structure.
 ## Features Implimented:
-[#] Print (Tellraw)
-[ ] Particles
-[ ] Variables
-[ ] Fill
-[ ] SetBlock
+- [x] Print (Tellraw)
+- [ ] Particles
+- [ ] Variables
+- [ ] Fill
+- [ ] SetBlock
