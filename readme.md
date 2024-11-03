@@ -12,5 +12,5 @@ This is a programming language that allows you to write datapacks for Minecraft 
 - [ ] Execute
 - [ ] Loops
 - [ ] Experience
-- [ ] Give
+- [x] Give
 - [x] Summon
