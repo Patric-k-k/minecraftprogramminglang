@@ -6,6 +6,11 @@ This is a programming language that allows you to write datapacks for Minecraft 
 ## Features Implimented:
 - [x] Print (Tellraw)
 - [ ] Particles
-- [ ] Variables
+- [ ] Scoreboard
 - [ ] Fill
 - [ ] SetBlock
+- [ ] Execute
+- [ ] Loops
+- [ ] Experience
+- [ ] Give
+- [ ] Summon
