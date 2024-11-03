@@ -24,5 +24,11 @@ if __name__ == "__main__":
                         output.write(compiled)
             else:
                 print("Invalid number of arguments!")
+        elif sys.argv[1] == "convert":
+            sys.argv.pop(0)
+            sys.argv.pop(0)
+            compiled = compile(sys.argv)
+            print("##OUTPUT##")
+            print(compiled)
         else:
             print("Invalid command!")
