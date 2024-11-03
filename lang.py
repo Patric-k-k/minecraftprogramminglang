@@ -13,7 +13,7 @@ global mode # stupid
 
 def compile(args):
     # define supported commands
-    supported_commands = ["print", "summon", "give"]
+    supported_commands = ["print", "summon", "give","setblock", "fill"]
     what_the_commands_do = {
         "print": {
             "desc":"prints something to the chat",
@@ -62,6 +62,43 @@ def compile(args):
                 }
             ],
             "script": "give ;target; ;item;"
+        },
+        "setblock": {
+            "desc":"sets a block",
+            "args": [
+                {
+                    "key":"block",
+                    "pos":1, 
+                    "input_pos": 1
+                },
+                {
+                    "key":"position",
+                    "pos":3, 
+                    "input_pos": 0
+                }
+            ],
+            "script": "setblock ;position; ;block;"
+        },
+        "fill": {
+            "desc":"fills an area",
+            "args": [
+                {
+                    "key":"from",
+                    "pos":1, 
+                    "input_pos": 0
+                },
+                {
+                    "key":"to",
+                    "pos":3, 
+                    "input_pos": 1
+                },
+                {
+                    "key":"block",
+                    "pos":5, 
+                    "input_pos": 2
+                }
+            ],
+            "script": "fill ;from; ;to; ;block;"
         }
     }
 
