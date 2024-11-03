@@ -8,6 +8,9 @@
 import sys
 
 # Code
+
+global mode # stupid
+
 def compile(args):
     # define supported commands
     supported_commands = ["print", "summon", "give"]
@@ -104,7 +107,43 @@ def compile(args):
             output = output + line + "\n"
         else:
             print(parts[0] + " is not supported!")
-            exit(-1) # oh no!
+            print("Is it an import statement?")
+            if parts[0] == "import":
+                print("It is!")
+                print("Importing Module Refrenced") # Warning: your about to see garbage code
+                try:
+                    with open(parts[1], "r") as f:
+                        langmodule = f.readlines()
+                    print(langmodule)
+                    global mode  # Declare mode as global here
+                    mode = "none"
+                    for modline in langmodule:
+                        print("Current mode:", mode)
+                        print("Current line:", repr(modline))  # repr() shows hidden characters
+                        if modline.startswith("#"):
+                            print("thats just a comment, continue")
+                        elif modline.strip() == "$START WHAT IT DOES$":  # Removed \n
+                            print("Found WHAT IT DOES marker")
+                            mode = "what it does"
+                        elif modline.strip() == "$START SUPPORTED COMMANDS$":  # Removed \n
+                            print("Found SUPPORTED COMMANDS marker")
+                            mode = "supported commands"
+                        else:
+                            if mode == "supported commands":
+                                supported_commands.append(modline.strip())
+                            elif mode == "what it does":
+                                import json
+                                command_data = json.loads(modline)
+                                what_the_commands_do.update(command_data)
+                    print("Module Loaded")
+                    print(supported_commands)
+                    print(what_the_commands_do)
+                except:
+                    print("Module Not Accessable!")
+                    exit(-1)
+            else:
+                print("Nope, ending!")
+                exit(-1) # oh no!
     return output
 
 if __name__ == "__main__":

@@ -14,3 +14,4 @@ This is a programming language that allows you to write datapacks for Minecraft 
 - [ ] Experience
 - [x] Give
 - [x] Summon
+- [x] Modules (Basically able to add custom commands to the language)

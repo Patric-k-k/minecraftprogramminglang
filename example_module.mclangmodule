@@ -1,0 +1,7 @@
+# these can be used for like if an mc plugin or something adds a command or something
+# these can be loaded by like using `import(example_module.mclangmodule)`
+# this is kinda a horrible system but I'm not spending all week on it.
+$START WHAT IT DOES$
+{"scale": {"desc":"prints something to the chat","args": [{"key":"target","pos":3, "input_pos": 0},{"key":"scale","pos":1, "input_pos": 1}],"script": "scale set ;scale; ;target;"}}
+$START SUPPORTED COMMANDS$
+scale
