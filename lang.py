@@ -10,7 +10,7 @@ import sys
 # Code
 def compile(args):
     # define supported commands
-    supported_commands = ["print", "summon"]
+    supported_commands = ["print", "summon", "give"]
     what_the_commands_do = {
         "print": {
             "desc":"prints something to the chat",
@@ -43,6 +43,22 @@ def compile(args):
                 }
             ],
             "script": "summon ;entity; ;position;"
+        },
+        "give": {
+            "desc":"gives a player an item",
+            "args": [
+                {
+                    "key":"target",
+                    "pos":1, 
+                    "input_pos": 0
+                },
+                {
+                    "key":"item",
+                    "pos":3, 
+                    "input_pos": 1
+                }
+            ],
+            "script": "give ;target; ;item;"
         }
     }
 
