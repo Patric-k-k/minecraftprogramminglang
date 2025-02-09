@@ -27,6 +27,7 @@ if __name__ == "__main__":
         elif sys.argv[1] == "convert":
             sys.argv.pop(0)
             sys.argv.pop(0)
+            sys.argv.insert(0,"import(./core.mclangmodule)")
             compiled = compile(sys.argv)
             print("##OUTPUT##")
             print(compiled)
