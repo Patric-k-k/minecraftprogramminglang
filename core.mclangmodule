@@ -1,0 +1,12 @@
+$START WHAT IT DOES$
+{"print": {"desc":"prints something to the chat","args": [{"key":"target","pos":1, "input_pos": 0},{"key":"message","pos":3, "input_pos": 1}],"script": "tellraw ;target; [\"\",{\"text\":\";message;\"}]"}}
+{"summon": {"desc":"summons an entity","args": [{"key":"entity","pos":1,"input_pos": 0},{"key":"position","pos":3,"input_pos": 1}],"script": "summon ;entity; ;position;"}}
+{"give": {"desc":"gives a player an item","args": [{"key":"target","pos":1,"input_pos": 0},{"key":"item","pos":3,"input_pos": 1}],"script": "give ;target; ;item;"}}
+{"setblock": {"desc":"sets a block","args": [{"key":"block","pos":1,"input_pos": 1},{"key":"position","pos":3,"input_pos": 0}],"script": "setblock ;position; ;block;"}}
+{"fill": {"desc":"fills an area","args": [{"key":"from","pos":1,"input_pos": 0},{"key":"to","pos":3,"input_pos": 1},{"key":"block","pos":5,"input_pos": 2}],"script": "fill ;from; ;to; ;block;"}}
+$START SUPPORTED COMMANDS$
+print
+summon
+give
+setblock
+fill

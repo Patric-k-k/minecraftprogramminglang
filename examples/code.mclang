@@ -1,0 +1,3 @@
+import(./examples/example_module.mclangmodule)
+import(./core.mclangmodule)
+print(@a,epic)

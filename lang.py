@@ -6,6 +6,7 @@
 # Imports
 
 import sys
+import utils
 
 # Code
 
@@ -13,25 +14,16 @@ global mode # stupid
 
 def compile(args, silent=False):
     # define supported commands
-    supported_commands = ["print", "summon", "give","setblock", "fill"]
-    what_the_commands_do = {
-        "print": {"desc":"prints something to the chat","args": [{"key":"target","pos":1, "input_pos": 0},{"key":"message","pos":3, "input_pos": 1}],"script": "tellraw ;target; [\"\",{\"text\":\";message;\"}]"},
-        "summon": {"desc":"summons an entity","args": [{"key":"entity","pos":1,"input_pos": 0},{"key":"position","pos":3,"input_pos": 1}],"script": "summon ;entity; ;position;"},
-        "give": {"desc":"gives a player an item","args": [{"key":"target","pos":1,"input_pos": 0},{"key":"item","pos":3,"input_pos": 1}],"script": "give ;target; ;item;"},
-        "setblock": {"desc":"sets a block","args": [{"key":"block","pos":1,"input_pos": 1},{"key":"position","pos":3,"input_pos": 0}],"script": "setblock ;position; ;block;"},
-        "fill": {"desc":"fills an area","args": [{"key":"from","pos":1,"input_pos": 0},{"key":"to","pos":3,"input_pos": 1},{"key":"block","pos":5,"input_pos": 2}],"script": "fill ;from; ;to; ;block;"}
-    }
+    supported_commands = []
+    what_the_commands_do = {}
 
     # 🍝 spaghetti code time!!! 🍝
 
     output = ""
-    for line in args: # for each line of code'
+    for line in args: # for each line of code
         if silent == False: print("Line: " + line)
         # break down the line into parts (I wish I knew a better way to do this)
-        line = line.replace("(",",") # replace the brackets with commas
-        line = line.replace(")",",") # replace the brackets with commas
-        parts = line.split(",") # split the line into parts
-        parts.pop(len(parts)-1) # remove the last part because it's empty
+        parts = utils.getLineParts(line)
         if silent == False: print(parts) # should be the parts of the line!
         if parts == []:
             return output
@@ -99,7 +91,7 @@ def compile(args, silent=False):
                     if silent == False: print("Module Not Accessable!")
                     return Exception
             else:
-                if silent == False: print("Nope, ending!")
+                print("SYNTAX ERROR AT LINE: " + line)
                 return Exception
     return output
 
