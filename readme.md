@@ -6,6 +6,7 @@ This is a programming language that allows you to write datapacks for Minecraft 
 
 ## Features in the software
 - [x] Modules (Basically able to add custom commands to the language)
+- [x] Global Modules (Modules that can be referenced from any directory)
 - [ ] Loops
 - [ ] Support for complex commands like execute
 ## Features Implimented in the core library (and planned):

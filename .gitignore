@@ -1,2 +1,4 @@
 input.mclang
 output.mcfunction
+__pycache__
+__pycache__/*

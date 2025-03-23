@@ -4,7 +4,7 @@
 # this module adds the scale command from pekkui, as an example
 # oh, also, the description attribute thing is for if I ever want to make an editor, so I can use that as a hover over thing.
 # you can also do a \n in your script thing to make it have multiple commands, like "script":"scale ;scale; ;target;\nsummon zombie ~ ~ ~"
-$START WHAT IT DOES$
-{"scale": {"desc":"prints something to the chat","args": [{"key":"target","pos":3, "input_pos": 0},{"key":"scale","pos":1, "input_pos": 1}],"script": "scale set ;scale; ;target;"}}
-$START SUPPORTED COMMANDS$
+$FUNCTION$
+{"scale": {"desc":"sets scale","args": [{"key":"target","pos":3, "input_pos": 0},{"key":"scale","pos":1, "input_pos": 1}],"script": "scale set ;scale; ;target;"}}
+$INCLUDED$
 scale

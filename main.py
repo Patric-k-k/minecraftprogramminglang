@@ -20,8 +20,12 @@ if __name__ == "__main__":
                     lines = file.readlines()
                     compiled = compile(lines)
                     print("Compiled!")
-                    with open(sys.argv[4], "w") as output:
-                        output.write(compiled)
+                    if isinstance(compiled,str):
+                        with open(sys.argv[4], "w") as output:
+                            output.write(compiled)
+                    else:
+                        print(f"Execption occured! {compiled[1]}")
+                        exit(-1)
             else:
                 print("Invalid number of arguments!")
         elif sys.argv[1] == "convert":
