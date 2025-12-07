@@ -1,5 +1,5 @@
 >[!CAUTION]
->This is NOT finished yet! The thing is barely functional!
+>Don't use this. There are many better alternatives.
 # Minecraft Programming Language
 ## What is this?
 This is a programming language that allows you to write datapacks for Minecraft with a better syntax and structure.
